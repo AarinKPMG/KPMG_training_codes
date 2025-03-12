@@ -1,0 +1,16 @@
+package com.programming.class1;
+
+public class SharedResource extends Thread {
+
+	void print(int n) {
+		for(int i=1 ; i<=5 ; i++) {
+			System.out.println(n*i);
+			try {
+				Thread.sleep(500);
+			}
+			catch
+			
+		}
+	}
+	
+}

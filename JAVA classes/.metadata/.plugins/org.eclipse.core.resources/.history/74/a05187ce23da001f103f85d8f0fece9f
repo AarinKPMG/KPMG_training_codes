@@ -1,0 +1,57 @@
+package com.programming.class1;
+
+class SharedResource extends Thread{
+	
+	void print(int n) {
+		for(int i=1 ; i<=5 ; i++) {
+			System.out.println(n*i);
+			try {
+				Thread.sleep(500);
+			}
+			catch(InterruptedException e){
+				e.printStackTrace();
+			}
+			
+		}
+	}
+}
+
+class MyThread1 extends Thread{
+	SharedResource sR;
+	
+	MyThread1(SharedResource sR){
+		this.sR = sR;
+	}
+	
+	public void run() {
+		sR.print(10);
+	}
+}
+
+class MyThread2 extends Thread{
+	SharedResource sR;
+	
+	MyThread2(SharedResource sR){
+		this.sR = sR;
+	}
+	
+	public void run() {
+		sR.print(20);
+	}
+}
+
+public class Synchronization extends Thread {
+	
+	public static void main(String[] args) {
+		
+		SharedResource sR = new SharedResource();
+		
+		MyThread1 t1 = new MyThread1(sR);
+		MyThread2 t2 = new MyThread2(sR);
+		
+		t1.start();
+		t2.start();
+		
+	}
+	
+}

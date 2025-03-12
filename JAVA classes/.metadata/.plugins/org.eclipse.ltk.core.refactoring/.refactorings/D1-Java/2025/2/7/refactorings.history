@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.programming.class1.Finally_keyword.java&apos; to &apos;Final_keyword.java&apos;&#x0D;&#x0A;- Original project: &apos;D1-Java&apos;&#x0D;&#x0A;- Original element: &apos;com.programming.class1.Finally_keyword.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.programming.class1.Final_keyword.java&apos;" description="Rename compilation unit &apos;Finally_keyword.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.programming.class1{Finally_keyword.java" name="Final_keyword.java" references="false" stamp="1739335312987" version="1.0"/>
+</session>

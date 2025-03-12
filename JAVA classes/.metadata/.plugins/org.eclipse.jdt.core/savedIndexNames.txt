@@ -1,0 +1,9 @@
+INDEX VERSION 1.134+C:\Users\Administrator\Desktop\Aar Docx\JAVA classes\.metadata\.plugins\org.eclipse.jdt.core
+3757359559.index
+3052691880.index
+2528195396.index
+1865797976.index
+1719135125.index
+3005947637.index
+2802533087.index
+1809291856.index

@@ -1,0 +1,38 @@
+package com.programming.class1;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class listOfCustomClass {
+	
+	public static void main(String[] args) {
+		
+		List<book> listbook = new ArrayList<>();
+		
+		book b1 = new book(123, "A" , "B" , "C" , 1000 );
+		book b2 = new book(151, "G" , "H" , "J" , 1000 );
+		book b3 = new book(249, "V" , "X" , "Z" , 1000 );
+		
+		listbook.add(b1);
+		listbook.add(b2);
+		listbook.add(b3);
+		
+		Iterator<book> itr = listbook.iterator();
+		
+		while(itr.hasNext()) {
+			
+			book b = itr.next();
+			int i = 1;
+			System.out.println("Book No."+(i++));
+			System.out.println(b.bookID);
+			System.out.println(b.bookName);
+			System.out.println(b.bookAuthor);
+			System.out.println(b.bookPublisher);
+			System.out.println(b.bookQuantity);
+			
+		}
+		
+	}
+	
+}

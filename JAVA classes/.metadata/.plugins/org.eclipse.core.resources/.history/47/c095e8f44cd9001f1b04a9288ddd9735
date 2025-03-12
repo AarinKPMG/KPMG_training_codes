@@ -1,0 +1,47 @@
+package com.programming.class1;
+
+import java.util.List;
+import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.ArrayList;
+
+public class IteratorClass {
+
+	public static void main(String[] args) {
+		
+		List<String> list1 = new ArrayList<>();
+		
+		list1.add("robin");
+		list1.add("ted");
+		list1.add("barney");
+		list1.add("marvin");
+		list1.add(null);
+		list1.add(null);
+		list1.add(null);
+		list1.add("lily");
+		list1.add("elizebeth");
+		
+		List<String> list2 = new ArrayList<>();
+		
+		list2.add("rachel");
+		list2.add("Ross");
+		list2.addAll(list1);
+		
+		System.out.println("Size of list is : "+list2.size());
+		
+		Iterator<String> itr = list2.iterator();
+		ListIterator<String> Ritr = list2.listIterator(list2.size());
+		
+		while(itr.hasNext()) {
+			System.out.print(itr.next() + " ");
+		}
+		
+		System.out.println("Size of list is : "+list2.size());
+		
+		while(Ritr.hasPrevious()) {
+			System.out.print(Ritr.previous() + " ");
+		}
+		
+	}
+	
+}
