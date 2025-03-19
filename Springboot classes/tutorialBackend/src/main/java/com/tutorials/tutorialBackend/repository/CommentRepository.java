@@ -13,7 +13,7 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
     List<Comment> findByTutorialId(long commentId);
 
     @Transactional
-    void deleteBytutorialId(long tutorialId);
+    void deleteByTutorialId(long tutorialId);
 
 
 }

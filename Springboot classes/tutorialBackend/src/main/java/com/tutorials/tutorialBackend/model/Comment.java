@@ -28,7 +28,7 @@ public class Comment {
     @ManyToOne(fetch=FetchType.LAZY , optional=false )
     @JoinColumn(name="tutorialId" , nullable=false )
     @OnDelete(action= OnDeleteAction.CASCADE)
-    @JsonIgnore
+    //@JsonIgnore
     private Tutorial tutorial;
 
 }
