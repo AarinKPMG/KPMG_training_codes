@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api")
 public class TutorialController {
@@ -44,6 +45,29 @@ public class TutorialController {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
             return new ResponseEntity<>(tutorials, HttpStatus.OK);
+    }
+
+//    It will only send single json object , where we need to send a array of json of object :
+
+//    @GetMapping("/tutorials/title/{title}")
+//    public ResponseEntity<Tutorial> getTutorialByTitle(@PathVariable("title") String title)
+//            throws ResourceNotFoundException {
+//
+//        Tutorial tutorial = tutorialRepository.findByTitle(title)
+//                .orElseThrow(() -> new ResourceNotFoundException("No Tutorial Found with title: " + title));
+//
+//        return new ResponseEntity<>(tutorial, HttpStatus.OK);
+//    }
+
+    @GetMapping("/tutorials/title/{title}")
+    public ResponseEntity<List<Tutorial>> getTutorialsByTitle(@PathVariable("title") String title) {
+        List<Tutorial> tutorials = tutorialRepository.findByTitleContaining(title);
+
+        if (tutorials.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<>(tutorials, HttpStatus.OK);
     }
 
     @GetMapping("/tutorials/{id}")
