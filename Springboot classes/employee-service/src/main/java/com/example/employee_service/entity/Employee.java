@@ -25,4 +25,7 @@ public class Employee {
     @Column( name = "age")
     private int age ;
 
+    @Column( name = "name")
+    private String name ;
+
 }

@@ -15,7 +15,7 @@ public interface AddressRepository  extends JpaRepository<Address, Integer> {
         nativeQuery=true,
         value = "select ea.id , ea.city , ea.state from " +
                 "hplus4.address ea join hplus4.employee e "+
-                "on ea.id = e.id where e.id = :employeeId"
+                "on ea.id = e.id where e.id=:employeeId"
     )
     Optional<Address> findAddressByEmployeeId(@Param("employeeId") int employee);
 
