@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build'){
+            steps {
+                bat 'mvn clean install'
+            }
+        }
+        stage('Test'){
+            steps {
+                bat 'mvn test'
+            }
+        }
+    }
+}
+
+// Make sure maven is present in the env variable
+// you have apache maven bin in your download folder
+// without this environment variable setting
+// mvn command will not work
+// use bat command below
+// build your spring boot application

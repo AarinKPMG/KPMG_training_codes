@@ -1,0 +1,25 @@
+services:
+  mysql:
+    image: 'mysql:latest'
+    environment:
+      - 'MYSQL_DATABASE=testdb'
+      - 'MYSQL_PASSWORD=pass@word1'
+      - 'MYSQL_ROOT_PASSWORD=pass@word1'
+      - 'MYSQL_USER=root'
+
+    ports:
+      - '3307:3306'
+
+  app:
+    build: .
+    ports:
+      - "9099:9099"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/samples_dev_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: pass@word1
+
+volumes:
+  mysql-data:
